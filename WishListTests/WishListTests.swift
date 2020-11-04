@@ -9,25 +9,26 @@ import XCTest
 @testable import WishList
 
 class WishListTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    //MARK: Item Class Tests
+    
+    func testItemInitializationSucceeds() {
+        let zeroRatingItem = Item.init(name: "Zero", photo: nil, rating: 0)
+        XCTAssertNotNil(zeroRatingItem)
+        
+        let positiveRatingItem = Item.init(name: "Positive", photo: nil, rating: 5)
+        XCTAssertNotNil(positiveRatingItem)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testItemInitializationFails() {
+        let negativeRatingItem = Item.init(name: "Negative", photo: nil, rating: -1)
+        XCTAssertNil(negativeRatingItem)
+        
+        let largeRatingItem = Item.init(name: "Large", photo: nil, rating: 6)
+        XCTAssertNil(largeRatingItem)
+        
+        let emptyStringItem = Item.init(name: "", photo: nil, rating: 0)
+        XCTAssertNil(emptyStringItem)
     }
 
 }

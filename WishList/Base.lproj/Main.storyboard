@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tgJ-D0-s3N">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -8,6 +8,66 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item Table View Controller-->
+        <scene sceneID="Qha-T5-4sc">
+            <objects>
+                <tableViewController id="tgJ-D0-s3N" customClass="ItemTableViewController" customModule="WishList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ket-rI-INr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" rowHeight="90" id="bz4-PG-ta7" customClass="ItemTableViewCell" customModule="WishList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bz4-PG-ta7" id="CCB-xx-UeB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="OMy-cH-nXd">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="OMy-cH-nXd" secondAttribute="height" multiplier="1:1" id="viI-JF-hZO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3h-67-9b7">
+                                            <rect key="frame" x="98" y="11" width="277" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tby-3U-2mC" customClass="RatingControl" customModule="WishList" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="40" width="252" height="44"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="OMy-cH-nXd" secondAttribute="bottom" id="Bf5-2e-gq7"/>
+                                        <constraint firstItem="tby-3U-2mC" firstAttribute="leading" secondItem="OMy-cH-nXd" secondAttribute="trailing" constant="8" symbolic="YES" id="EbN-yh-cvB"/>
+                                        <constraint firstItem="OMy-cH-nXd" firstAttribute="leading" secondItem="CCB-xx-UeB" secondAttribute="leading" id="JL4-S0-bwc"/>
+                                        <constraint firstItem="OMy-cH-nXd" firstAttribute="top" secondItem="CCB-xx-UeB" secondAttribute="top" id="fZH-LK-9By"/>
+                                        <constraint firstItem="v3h-67-9b7" firstAttribute="leading" secondItem="OMy-cH-nXd" secondAttribute="trailing" constant="8" symbolic="YES" id="mTT-vH-dzK"/>
+                                        <constraint firstItem="tby-3U-2mC" firstAttribute="top" secondItem="v3h-67-9b7" secondAttribute="bottom" constant="8" symbolic="YES" id="qDP-Lu-P3q"/>
+                                        <constraint firstAttribute="trailing" secondItem="v3h-67-9b7" secondAttribute="trailing" id="sU7-2d-Znv"/>
+                                        <constraint firstItem="v3h-67-9b7" firstAttribute="top" secondItem="CCB-xx-UeB" secondAttribute="top" constant="11" id="zT6-il-D2G"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="v3h-67-9b7" id="gSg-8D-X0Q"/>
+                                    <outlet property="photoImageView" destination="OMy-cH-nXd" id="Enw-ou-ckH"/>
+                                    <outlet property="ratingControl" destination="tby-3U-2mC" id="oom-lt-O7q"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tgJ-D0-s3N" id="mdX-fQ-PMG"/>
+                            <outlet property="delegate" destination="tgJ-D0-s3N" id="bGS-NI-LyV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLG-vT-uj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-860" y="88.605697151424295"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

@@ -16,6 +16,9 @@
 		6899AB43255012AA00137440 /* WishListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899AB42255012AA00137440 /* WishListTests.swift */; };
 		6899AB4E255012AA00137440 /* WishListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899AB4D255012AA00137440 /* WishListUITests.swift */; };
 		6899AB5F2550465500137440 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899AB5E2550465500137440 /* RatingControl.swift */; };
+		689C181C2551ADB400D635EF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689C181B2551ADB400D635EF /* Item.swift */; };
+		68BA7F9E255255C1005C53B5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA7F9D255255C1005C53B5 /* ItemTableViewCell.swift */; };
+		68BA7FA325525BD7005C53B5 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA7FA225525BD7005C53B5 /* ItemTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		6899AB4D255012AA00137440 /* WishListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListUITests.swift; sourceTree = "<group>"; };
 		6899AB4F255012AA00137440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6899AB5E2550465500137440 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		689C181B2551ADB400D635EF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		68BA7F9D255255C1005C53B5 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		68BA7FA225525BD7005C53B5 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,11 @@
 		6899AB2A255012A600137440 /* WishList */ = {
 			isa = PBXGroup;
 			children = (
+				68C42E9D2552F9E9006B6B00 /* model */,
+				68C42E9C2552F9D6006B6B00 /* controller */,
+				68C42E9B2552F9A1006B6B00 /* view */,
 				6899AB2B255012A600137440 /* AppDelegate.swift */,
 				6899AB2D255012A600137440 /* SceneDelegate.swift */,
-				6899AB2F255012A600137440 /* ViewController.swift */,
-				6899AB5E2550465500137440 /* RatingControl.swift */,
 				6899AB31255012A600137440 /* Main.storyboard */,
 				6899AB34255012A900137440 /* Assets.xcassets */,
 				6899AB36255012A900137440 /* LaunchScreen.storyboard */,
@@ -129,6 +136,32 @@
 				6899AB4F255012AA00137440 /* Info.plist */,
 			);
 			path = WishListUITests;
+			sourceTree = "<group>";
+		};
+		68C42E9B2552F9A1006B6B00 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				68BA7F9D255255C1005C53B5 /* ItemTableViewCell.swift */,
+				6899AB5E2550465500137440 /* RatingControl.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		68C42E9C2552F9D6006B6B00 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6899AB2F255012A600137440 /* ViewController.swift */,
+				68BA7FA225525BD7005C53B5 /* ItemTableViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		68C42E9D2552F9E9006B6B00 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				689C181B2551ADB400D635EF /* Item.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689C181C2551ADB400D635EF /* Item.swift in Sources */,
 				6899AB5F2550465500137440 /* RatingControl.swift in Sources */,
 				6899AB30255012A600137440 /* ViewController.swift in Sources */,
 				6899AB2C255012A600137440 /* AppDelegate.swift in Sources */,
+				68BA7F9E255255C1005C53B5 /* ItemTableViewCell.swift in Sources */,
 				6899AB2E255012A600137440 /* SceneDelegate.swift in Sources */,
+				68BA7FA325525BD7005C53B5 /* ItemTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
