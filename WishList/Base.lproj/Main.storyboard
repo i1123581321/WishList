@@ -38,16 +38,20 @@
                                         </label>
                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tby-3U-2mC" customClass="RatingControl" customModule="WishList" customModuleProvider="target">
                                             <rect key="frame" x="98" y="40" width="252" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="252" id="7k9-iW-cjL"/>
+                                                <constraint firstAttribute="height" constant="44" id="dv0-ho-R4G"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="tby-3U-2mC" firstAttribute="leading" secondItem="OMy-cH-nXd" secondAttribute="trailing" constant="8" id="AeW-T1-LOQ"/>
                                         <constraint firstAttribute="bottom" secondItem="OMy-cH-nXd" secondAttribute="bottom" id="Bf5-2e-gq7"/>
-                                        <constraint firstItem="tby-3U-2mC" firstAttribute="leading" secondItem="OMy-cH-nXd" secondAttribute="trailing" constant="8" symbolic="YES" id="EbN-yh-cvB"/>
                                         <constraint firstItem="OMy-cH-nXd" firstAttribute="leading" secondItem="CCB-xx-UeB" secondAttribute="leading" id="JL4-S0-bwc"/>
                                         <constraint firstItem="OMy-cH-nXd" firstAttribute="top" secondItem="CCB-xx-UeB" secondAttribute="top" id="fZH-LK-9By"/>
                                         <constraint firstItem="v3h-67-9b7" firstAttribute="leading" secondItem="OMy-cH-nXd" secondAttribute="trailing" constant="8" symbolic="YES" id="mTT-vH-dzK"/>
-                                        <constraint firstItem="tby-3U-2mC" firstAttribute="top" secondItem="v3h-67-9b7" secondAttribute="bottom" constant="8" symbolic="YES" id="qDP-Lu-P3q"/>
                                         <constraint firstAttribute="trailing" secondItem="v3h-67-9b7" secondAttribute="trailing" id="sU7-2d-Znv"/>
+                                        <constraint firstItem="tby-3U-2mC" firstAttribute="top" secondItem="v3h-67-9b7" secondAttribute="bottom" constant="8" id="wxp-sL-4xB"/>
                                         <constraint firstItem="v3h-67-9b7" firstAttribute="top" secondItem="CCB-xx-UeB" secondAttribute="top" constant="11" id="zT6-il-D2G"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -85,15 +89,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o2o-7y-eFk">
-                                <rect key="frame" x="16" y="64" width="343" height="414"/>
+                                <rect key="frame" x="16" y="64" width="343" height="437.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入物品名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUR-s0-5iE">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入物品名……" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL1-Mx-orG">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ODX-nh-JT7" appends="YES" id="UpJ-Nv-Fav"/>
+                                        </connections>
+                                    </label>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入物品名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUR-s0-5iE">
+                                        <rect key="frame" x="0.0" y="34" width="343" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写下你的心愿……" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5R-cC-Nu6">
+                                        <rect key="frame" x="0.0" y="38" width="343" height="19.5"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="PI7-P0-cC1" appends="YES" id="kTx-a5-fo6"/>
+                                        </connections>
+                                    </label>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="写下你的心愿……" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="klJ-nt-TDJ">
+                                        <rect key="frame" x="0.0" y="61.5" width="343" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ivO-Bo-prh">
-                                        <rect key="frame" x="11.5" y="42" width="320" height="320"/>
+                                        <rect key="frame" x="11.5" y="65.5" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ivO-Bo-prh" secondAttribute="height" multiplier="1:1" id="t8i-n4-D17"/>
@@ -103,10 +132,17 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hhL-76-xyN" customClass="RatingControl" customModule="WishList" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="370" width="252" height="44"/>
+                                        <rect key="frame" x="45.5" y="393.5" width="252" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="L5L-xK-giY"/>
+                                            <constraint firstAttribute="width" constant="252" id="P8S-Cf-Byo"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="a5R-cC-Nu6" secondAttribute="trailing" id="Cjh-Fu-eda"/>
+                                    <constraint firstAttribute="trailing" secondItem="klJ-nt-TDJ" secondAttribute="trailing" id="bFX-0P-SHR"/>
+                                    <constraint firstAttribute="trailing" secondItem="NL1-Mx-orG" secondAttribute="trailing" id="d3l-Jb-VXe"/>
                                     <constraint firstAttribute="trailing" secondItem="BUR-s0-5iE" secondAttribute="trailing" id="rei-ZO-YtY"/>
                                 </constraints>
                             </stackView>
@@ -132,10 +168,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameLabel" destination="NL1-Mx-orG" id="0o5-B0-plM"/>
                         <outlet property="nameTextField" destination="BUR-s0-5iE" id="pwi-Bf-KQy"/>
                         <outlet property="photoImageView" destination="ivO-Bo-prh" id="dtH-VQ-xVi"/>
                         <outlet property="ratingControl" destination="hhL-76-xyN" id="jA7-Gg-b9N"/>
                         <outlet property="saveButton" destination="cbF-z7-FJw" id="dN2-In-T13"/>
+                        <outlet property="wishLabel" destination="a5R-cC-Nu6" id="OHn-rX-ddu"/>
+                        <outlet property="wishTextField" destination="klJ-nt-TDJ" id="f6T-Cw-EKO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -143,6 +182,16 @@
                 <tapGestureRecognizer id="bcI-9k-aCl">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="2Bu-Ek-cmM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="PI7-P0-cC1">
+                    <connections>
+                        <action selector="showWishTextField:" destination="BYZ-38-t0r" id="Wqv-Qp-azh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ODX-nh-JT7">
+                    <connections>
+                        <action selector="showNameTextField:" destination="BYZ-38-t0r" id="AtH-pU-1U1"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -192,6 +241,9 @@
         <image name="defaultPhoto" width="320" height="320"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -18,6 +18,7 @@ import UIKit
      */
     
     //MARK: Properties
+    
     private var ratingButtons = [UIButton]()
     
     var rating = 0 {
@@ -37,6 +38,7 @@ import UIKit
     }
     
     //MARK: Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButtons()
@@ -48,6 +50,7 @@ import UIKit
     }
     
     //MARK: Private Methods
+    
     private func setupButtons(){
         for button in ratingButtons{
             removeArrangedSubview(button)
@@ -85,6 +88,7 @@ import UIKit
     }
     
     //MARK: Button Action
+    
     @objc func ratingButtonTapped(button: UIButton){
         guard let index = ratingButtons.firstIndex(of: button) else {
             fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")

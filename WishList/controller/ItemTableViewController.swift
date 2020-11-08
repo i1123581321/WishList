@@ -149,15 +149,15 @@ class ItemTableViewController: UITableViewController {
         let photo2 = UIImage(named: "item2")
         let photo3 = UIImage(named: "item3")
         
-        guard let item1 = Item(name: "Play Station 5", photo: photo1, rating: 5) else {
+        guard let item1 = Item(name: "Play Station 5", photo: photo1, rating: 5, wish: nil) else {
             fatalError("Unable to instantiate item1")
         }
         
-        guard let item2 = Item(name: "RTX 3080", photo: photo2, rating: 2) else {
+        guard let item2 = Item(name: "RTX 3080", photo: photo2, rating: 2, wish: nil) else {
             fatalError("Unable to instantiate item2")
         }
         
-        guard let item3 = Item(name: "Airpods Pro", photo: photo3, rating: 4) else {
+        guard let item3 = Item(name: "Airpods Pro", photo: photo3, rating: 4, wish: nil) else {
             fatalError("Unable to instantiate item3")
         }
         

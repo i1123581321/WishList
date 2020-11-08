@@ -15,8 +15,10 @@ class Item: NSObject {
     var name: String
     var photo: UIImage?
     var rating: Int
+    var wish: String?
     
     //MARK: Archiving Paths
+    
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("items.data")
     
@@ -26,11 +28,12 @@ class Item: NSObject {
         static let name = "name"
         static let photo = "photo"
         static let rating = "rating"
+        static let wish = "wish"
     }
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int, wish: String?) {
         guard !name.isEmpty else {
             return nil
         }
@@ -42,6 +45,7 @@ class Item: NSObject {
         self.name = name
         self.photo = photo
         self.rating = rating
+        self.wish = wish
     }
     
     required convenience init?(coder: NSCoder) {
@@ -51,7 +55,8 @@ class Item: NSObject {
         }
         let photo = coder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         let rating = coder.decodeInteger(forKey: PropertyKey.rating)
-        self.init(name: name, photo: photo, rating:rating)
+        let wish = coder.decodeObject(forKey: PropertyKey.wish) as? String
+        self.init(name: name, photo: photo, rating:rating, wish:wish)
     }
 }
 
@@ -60,5 +65,6 @@ extension Item: NSCoding{
         coder.encode(name, forKey: PropertyKey.name)
         coder.encode(photo, forKey: PropertyKey.photo)
         coder.encode(rating, forKey: PropertyKey.rating)
+        coder.encode(wish, forKey: PropertyKey.wish)
     }
 }
